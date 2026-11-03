@@ -1,8 +1,8 @@
-# Agentic QA Automation Blueprint 🤖 Playwright + Google Antigravity / Claude Code
+# Agentic QA Automation Blueprint 🤖 Playwright + Google Antigravity + Claude Code
 
 A standalone, multi-project **agentic test automation blueprint** built with **Playwright**, **TypeScript**, and **Google Antigravity**. 
 
-Unlike traditional static test suites, this repository treats AI agents as autonomous engineers. It implements a **5-stage state-machine pipeline** with progressive context disclosure, Model Context Protocol (MCP) tool integration, sacred assertion guardrails (anti-bug-masking), and an executive KPI reporting dashboard.
+Unlike traditional static test suites, this repository treats AI agents as autonomous engineers. It implements a **5-stage state-machine pipeline** with stateless JSON handoff contracts, Model Context Protocol (MCP) tool integration, sacred assertion guardrails (anti-bug-masking), and an executive KPI reporting dashboard.
 
 ---
 
@@ -15,11 +15,17 @@ graph TD
     S3 --> S4["4. Execute & Report"]
     S4 -->|Failures Detected| S5["5. Triage & Heal (Max 2 Strikes)"]
     S5 -->|Re-run Suite| S4
-    S4 -->|All Passed / Bug Filed| DONE([Green KPI Dashboard])
+    S4 -->|All Passed / Bug Filed| DONE(["Green KPI Dashboard"])
+```
 
-Replace the **Repository Structure**, **Local Setup Guide**, and **Executive KPI Reporting** sections in your `README.md` with this updated block. It includes `scripts/run-pipeline.mjs` in the file tree and showcases your 4 new `npm` shortcuts alongside the stateless handoff architecture:
+1. **Synthesize Spec & Design (`1-synthesize-spec-and-design`):** Reconciles requirements (Jira MCP / local specs) and designs (Figma MCP) using a strict Hierarchy of Truth, flagging missing inputs and conflicts.
+2. **Explore Live App & Plan Cases (`2-explore-and-plan-cases`):** Uses the Playwright MCP server to inspect the live DOM accessibility tree at `BASE_URL` and map resilient locators.
+3. **Audit & Generate Code (`3-generate-tests`):** Enforces 100% requirement traceability before generating Page Object Models (POM) and E2E specs adhering to strict coding standards.
+4. **Execute & Report (`4-execute-and-report`):** Runs deterministic Playwright tests, generates visual HTML traces, and updates an Executive KPI Dashboard.
+5. **Triage & Heal (`5-triage-and-heal`):** Automatically diagnoses failures, applies bounded self-healing (max 2 strikes) for selector drift, or files structured bug reports for real application defects—looping back to Stage 4 until verified.
 
-```markdown
+---
+
 ## 📂 Repository Structure
 
 ```text
@@ -40,7 +46,6 @@ qa-automation-template/
 │   ├── pages/                         # Page Object Models (POM)
 │   └── e2e/                           # Test specification files
 └── reports/                           # Ephemeral HTML traces, JSON handoffs, and KPI dashboard
-
 ```
 
 ---
@@ -50,41 +55,32 @@ qa-automation-template/
 Follow these steps to set up and run this blueprint locally using **VS Code**, **Google Antigravity**, or **Claude Code**.
 
 ### Prerequisites
-
-* **Node.js** (v18 or newer)
-* **VS Code** with the **Playwright Test for VS Code** extension
-* **Google Antigravity** or **Claude Code** CLI installed for AI agent orchestration
+- **Node.js** (v18 or newer)
+- **VS Code** with the **Playwright Test for VS Code** extension
+- **Google Antigravity** or **Claude Code** CLI installed for AI agent orchestration
 
 ### Step 1: Clone and Install Dependencies
-
 ```bash
 git clone [https://github.com/cc8805/qa-automation-blueprint.git](https://github.com/cc8805/qa-automation-blueprint.git)
 cd qa-automation-blueprint
 npm install
 npx playwright install chromium
-
 ```
 
 ### Step 2: Configure Environment Variables
-
 Copy the example environment file and set your target web application URL:
-
 ```bash
 cp .env.example .env
-
 ```
-
 Open `.env` in your editor and configure your target URL:
-
 ```ini
 BASE_URL=[https://demo.playwright.dev/todomvc](https://demo.playwright.dev/todomvc)
-
 ```
 
 ### Step 3: Run the Pipeline or Test Suite (`npm` Shortcuts)
 
 | Command | Description |
-| --- | --- |
+| :--- | :--- |
 | `npm run pipeline -- todo-management` | **Full 5-Stage Stateless Pipeline:** Spawns isolated agent sessions sequentially for `specs/todo-management.md`, passing state via JSON handoff contracts (`reports/handoffs/`). |
 | `npm test` | **Run Playwright Suite:** Executes all existing E2E specs headlessly and outputs raw JSON/HTML trace data. |
 | `npm run report:kpi` | **Generate KPI Dashboard:** Parses the latest test run and builds `reports/metrics-summary.md` and `reports/kpi-dashboard.html`. |
@@ -97,8 +93,16 @@ BASE_URL=[https://demo.playwright.dev/todomvc](https://demo.playwright.dev/todom
 ## 📊 Executive KPI Reporting & Dashboard
 
 Every test execution automatically generates:
-
 1. **Interactive HTML Dashboard:** Time-travel traces and failure screenshots via `npm run report:html`.
 2. **Executive KPI Dashboard (`reports/kpi-dashboard.html`):** Built via `npm run report:kpi`, providing a standalone dark-mode executive UI tracking Pass Rate trend charts across runs, slowest test bottlenecks, and AI self-healing audit ledgers.
 
+---
 
+## 🛡️ Key Architectural Guardrails
+- **Stateless Context Handoffs:** Each pipeline stage runs in an isolated session and communicates strictly via structured JSON artifacts in `reports/handoffs/`, preventing context rot across long test suites.
+- **Anti-Bug-Masking:** The AI Healer is strictly prohibited from mutating business `expect()` assertions to force a green test suite when an application defect exists.
+- **2-Strike Healing Cap:** Prevents infinite agent loops by capping automated locator repairs at two attempts before filing a formal bug report in `reports/bugs/`.
+- **Zero Hardcoded Secrets:** Credentials and tokens are externalized via environment variables and isolated `.auth/` storage states.
+
+---
+*Built as a showcase of Agentic QA Architecture.*
