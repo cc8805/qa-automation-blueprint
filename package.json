@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "report:html": "playwright show-report reports/html",
+    "report:kpi": "node .agents/skills/4-execute-and-report/scripts/parse-metrics.mjs",
+    "pipeline": "node scripts/run-pipeline.mjs"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
