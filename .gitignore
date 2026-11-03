@@ -1,0 +1,21 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Playwright Auth State & Environment
+.auth/
+.env
+
+# Agentic Blueprint Ephemeral Reports & Logs
+reports/html/
+reports/json/
+reports/plans/
+reports/bugs/
+reports/history.json
+reports/healing-log.json
+reports/kpi-dashboard.html
