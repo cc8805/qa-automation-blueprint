@@ -1,0 +1,8 @@
+{
+  "feature": "todo-management",
+  "stage": 2,
+  "status": "COMPLETED",
+  "truthMatrixPath": "reports/plans/todo-management-truth-matrix.md",
+  "testPlanPath": "reports/plans/todo-management-test-plan.md",
+  "driftAlerts": []
+}

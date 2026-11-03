@@ -1,0 +1,9 @@
+{
+  "feature": "todo-management",
+  "stage": 3,
+  "status": "COMPLETED",
+  "truthMatrixPath": "reports/plans/todo-management-truth-matrix.md",
+  "pageObjectPath": "tests/pages/TodoPage.ts",
+  "specFilePath": "tests/e2e/todo-management.spec.ts",
+  "testCount": 5
+}

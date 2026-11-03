@@ -1,0 +1,13 @@
+{
+  "feature": "todo-management",
+  "stage": 1,
+  "status": "COMPLETED",
+  "truthMatrixPath": "reports/plans/todo-management-truth-matrix.md",
+  "missingSources": [
+    "Jira",
+    "Figma"
+  ],
+  "discrepancies": [
+    "REQ-03: Filter button label difference between spec note ('Active items') and Figma exact text ('Active'); resolved to 'Active' via Hierarchy of Truth"
+  ]
+}

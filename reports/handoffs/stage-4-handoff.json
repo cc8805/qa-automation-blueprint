@@ -1,0 +1,10 @@
+{
+  "feature": "todo-management",
+  "stage": 4,
+  "passRate": 100.0,
+  "failedCount": 0,
+  "needsHealing": false,
+  "failingSpecs": [],
+  "summaryPath": "reports/metrics-summary.md",
+  "dashboardPath": "reports/kpi-dashboard.html"
+}

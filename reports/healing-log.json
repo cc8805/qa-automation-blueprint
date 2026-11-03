@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2026-11-03T07:11:45.249Z",
+    "specFile": "checkout.spec.ts",
+    "oldLocator": "getByRole('button', { name: 'Buy' })",
+    "newLocator": "getByRole('button', { name: 'Checkout' })",
+    "outcome": "HEALED"
+  }
+]
