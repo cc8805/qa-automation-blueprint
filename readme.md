@@ -1,4 +1,4 @@
-# Agentic QA Automation Blueprint 🤖 Playwright + Google Antigravity + Claude Code
+# Agentic QA Automation Blueprint - Playwright + Google Antigravity/Claude Code
 
 A standalone, multi-project **agentic test automation blueprint** built with **Playwright**, **TypeScript**, and **Google Antigravity**. 
 
@@ -6,7 +6,7 @@ Unlike traditional static test suites, this repository treats AI agents as auton
 
 ---
 
-## 🏗️ Architecture & 5-Stage Pipeline
+## Architecture & 5-Stage Pipeline
 
 ```mermaid
 graph TD
