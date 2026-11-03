@@ -5,7 +5,7 @@ import path from 'path';
 
 // 1. Parse CLI arguments (default feature: 'todo-management')
 const feature = process.argv[2] || 'todo-management';
-const cliEngine = process.env.AGENT_CLI || 'claude'; // 'claude' or 'antigravity'
+const cliEngine = process.env.AGENT_CLI || 'antigravity'; // 'claude' or 'antigravity'
 const handoffsDir = path.resolve('reports/handoffs');
 
 // Ensure handoffs directory exists and clear stale handoffs for a clean run

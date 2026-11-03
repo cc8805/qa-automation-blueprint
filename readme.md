@@ -50,51 +50,17 @@ qa-automation-template/
 
 ---
 
-## 🚀 Local Setup & Execution Guide
 
-Follow these steps to set up and run this blueprint locally using **VS Code**, **Google Antigravity**, or **Claude Code**.
-
-### Prerequisites
-- **Node.js** (v18 or newer)
-- **VS Code** with the **Playwright Test for VS Code** extension
-- **Google Antigravity** or **Claude Code** CLI installed for AI agent orchestration
-
-### Step 1: Clone and Install Dependencies
-```bash
-git clone [https://github.com/cc8805/qa-automation-blueprint.git](https://github.com/cc8805/qa-automation-blueprint.git)
-cd qa-automation-blueprint
-npm install
-npx playwright install chromium
-```
-
-### Step 2: Configure Environment Variables
-Copy the example environment file and set your target web application URL:
-```bash
-cp .env.example .env
-```
-Open `.env` in your editor and configure your target URL:
-```ini
-BASE_URL=[https://demo.playwright.dev/todomvc](https://demo.playwright.dev/todomvc)
-```
-
-### Step 3: Run the Pipeline or Test Suite (`npm` Shortcuts)
-
-| Command | Description |
-| :--- | :--- |
-| `npm run pipeline -- todo-management` | **Full 5-Stage Stateless Pipeline:** Spawns isolated agent sessions sequentially for `specs/todo-management.md`, passing state via JSON handoff contracts (`reports/handoffs/`). |
-| `npm test` | **Run Playwright Suite:** Executes all existing E2E specs headlessly and outputs raw JSON/HTML trace data. |
-| `npm run report:kpi` | **Generate KPI Dashboard:** Parses the latest test run and builds `reports/metrics-summary.md` and `reports/kpi-dashboard.html`. |
-| `npm run report:html` | **Open Trace Viewer:** Launches the interactive Playwright HTML report with time-travel DOM snapshots. |
-
-*(Tip: To run the automated CLI pipeline with Google Antigravity instead of Claude Code, set `AGENT_CLI=antigravity` before running `npm run pipeline`).*
-
----
 
 ## 📊 Executive KPI Reporting & Dashboard
+
 
 Every test execution automatically generates:
 1. **Interactive HTML Dashboard:** Time-travel traces and failure screenshots via `npm run report:html`.
 2. **Executive KPI Dashboard (`reports/kpi-dashboard.html`):** Built via `npm run report:kpi`, providing a standalone dark-mode executive UI tracking Pass Rate trend charts across runs, slowest test bottlenecks, and AI self-healing audit ledgers.
+
+![Executive KPI Dashboard Preview](assets/kpi-dashboard-preview.png)
+
 
 ---
 

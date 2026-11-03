@@ -2,6 +2,7 @@ import { type Page, type Locator } from '@playwright/test';
 
 export class TodoPage {
   readonly page: Page;
+  readonly newTodoInput: Locator;
   readonly input: Locator;
   readonly todoItems: Locator;
   readonly todoCount: Locator;
@@ -12,7 +13,8 @@ export class TodoPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.input = page.getByPlaceholder('What needs to be done?');
+    this.newTodoInput = page.getByPlaceholder('What needs to be done?');
+    this.input = this.newTodoInput;
     this.todoItems = page.getByTestId('todo-item');
     this.todoCount = page.getByTestId('todo-count');
     this.filterAll = page.getByRole('link', { name: 'All' });
@@ -26,8 +28,8 @@ export class TodoPage {
   }
 
   async addTodo(text: string): Promise<void> {
-    await this.input.fill(text);
-    await this.input.press('Enter');
+    await this.newTodoInput.fill(text);
+    await this.newTodoInput.press('Enter');
   }
 
   getTodoItem(text: string): Locator {
@@ -36,6 +38,10 @@ export class TodoPage {
 
   getTodoCheckbox(text: string): Locator {
     return this.getTodoItem(text).getByRole('checkbox', { name: 'Toggle Todo' });
+  }
+
+  todoCheckbox(item: Locator): Locator {
+    return item.getByRole('checkbox', { name: 'Toggle Todo' });
   }
 
   async toggleTodo(text: string): Promise<void> {
@@ -56,4 +62,3 @@ export class TodoPage {
     }
   }
 }
-
