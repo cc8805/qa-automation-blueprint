@@ -11,6 +11,9 @@ node_modules/
 .auth/
 .env
 
+# Playwright MCP Ephemeral Cache & Logs
+.playwright-mcp/
+
 # Agentic Blueprint Ephemeral Reports & Logs
 reports/html/
 reports/json/
