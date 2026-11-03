@@ -28,3 +28,6 @@ Inspect the **Failed Tests Requiring Triage** section in `reports/metrics-summar
   - Report the final metrics and list the filed bug reports for the user.
 - **Condition C — Unhandled Failures Exist (Under 2 Strikes):**
   - Hand control immediately to Skill **`5-triage-and-heal`**.
+
+## Step 4: Write Stage 4 Handoff File (Mandatory Exit Step)
+Before finishing, write `reports/handoffs/stage-4-handoff.json` containing `feature`, `stage: 4`, `passRate`, `failedCount`, `needsHealing` (`true` if unhandled failures remain under the 2-strike cap, otherwise `false`), `failingSpecs`, `summaryPath`, and `dashboardPath`.

@@ -29,3 +29,6 @@ Write `reports/plans/<feature>-test-plan.md` containing:
    - Mapped to `REQ-ID` from the Truth Matrix
    - Tag (`@smoke`, `@regression`, `@critical`)
    - Step-by-step actions and explicit `expect()` business/functional UI assertions (never pixel screenshot assertions).
+
+## Step 4: Write Stage 2 Handoff File (Mandatory Exit Step)
+First read `reports/handoffs/stage-1-handoff.json` if not injected. Before finishing, write `reports/handoffs/stage-2-handoff.json` containing `feature`, `stage: 2`, `status: "COMPLETED"`, `truthMatrixPath`, `testPlanPath`, and `driftAlerts`.

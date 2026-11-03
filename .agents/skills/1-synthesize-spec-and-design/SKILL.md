@@ -40,3 +40,6 @@ Create `reports/plans/<feature>-truth-matrix.md` with this exact structure:
 | ID | Requirement / Flow | Expected Business Logic (Jira/Spec) | Expected UI Copy & States (Figma) |
 | :--- | :--- | :--- | :--- |
 | REQ-01 | ... | ... | ... |
+
+## Step 4: Write Stage 1 Handoff File (Mandatory Exit Step)
+Before finishing, write `reports/handoffs/stage-1-handoff.json` containing `feature`, `stage: 1`, `status: "COMPLETED"`, `truthMatrixPath`, `missingSources`, and `discrepancies`.

@@ -25,3 +25,6 @@ Verify the following:
    - Sources used (e.g., `Jira: PROJ-123 | Figma: Checkout Frame | Spec: Missing`)
    - Discrepancies noted during synthesis
 3. Keep all `expect()` assertions inside the `test()` blocks.
+
+## Step 4: Write Stage 3 Handoff File (Mandatory Exit Step)
+First read `reports/handoffs/stage-2-handoff.json` if not injected. Before finishing, write `reports/handoffs/stage-3-handoff.json` containing `feature`, `stage: 3`, `status: "COMPLETED"`, `truthMatrixPath`, `pageObjectPath`, `specFilePath`, and `testCount`.

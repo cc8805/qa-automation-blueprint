@@ -40,3 +40,6 @@ You are **never** allowed to end the workflow inside Stage 5.
 Immediately after completing Case A or Case B, invoke Skill **`4-execute-and-report`** so that:
 1. Any healed test is actually executed and proven green (or caught if it fails on Strike 2).
 2. `parse-metrics.mjs` runs again and refreshes `reports/kpi-dashboard.html` and `reports/metrics-summary.md` with the latest pass rate and healing ledger entries.
+
+## Step 4: Write Stage 5 Handoff File (Mandatory Exit Step)
+Before handing back to Stage 4, write `reports/handoffs/stage-5-handoff.json` containing `feature`, `stage: 5`, `strikeCount`, `actionTaken` (`"HEALED"` or `"BUG_FILED"`), `targetSpec`, `bugReportPath`, and `rerunRequired: true`.
