@@ -1,4 +1,5 @@
 # Agentic QA Automation Blueprint - Playwright + Google Antigravity/Claude Code
+*Built as a basic showcase of Agentic QA Automation Architecture.*
 
 A standalone, multi-project **agentic test automation blueprint** built with **Playwright**, **TypeScript**, and **Google Antigravity**. 
 
@@ -71,4 +72,3 @@ Every test execution automatically generates:
 - **Zero Hardcoded Secrets:** Credentials and tokens are externalized via environment variables and isolated `.auth/` storage states.
 
 ---
-*Built as a showcase of Agentic QA Architecture.*
